@@ -6,12 +6,8 @@ app = FastAPI(title="Word Meaning Generator API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",               # Vite dev server
-        "http://localhost:3000",               # alternative local port
-        "https://word-web-frontend.vercel.app", # deployed frontend
-    ],
-    allow_credentials=True,
+    allow_origins=["*"],  # temporary: allow all origins to unblock testing
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
